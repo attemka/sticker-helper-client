@@ -19,8 +19,8 @@ render() {
     return(<div className={'sticker-list'}>
         {stickers && stickers.length && stickers.map(sticker =>
             <div className={'sticker-block'} key={sticker.stickerId}>
-                <img className={'sticker-image'} src={sticker.filePath} />
-                {sticker.searchWords.map(word => word.text)}
+                <img className={'sticker-image'} src={`http://${process.env.SERVER_IP}:8888/${sticker.filePath}`} />
+                {sticker.searchWords.map(word => <div>{word.text}</div>)}
             </div>
         )}
     </div>)
