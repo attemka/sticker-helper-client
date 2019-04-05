@@ -7,7 +7,7 @@ state={
 };
 
 componentDidMount() {
-    fetch('http://localhost:8888/api/stickers').then(res => {
+    fetch(`http://${process.env.SERVER_IP}:8888/api/stickers`).then(res => {
         // console.log(res);
         return res.json();
         // this.setState({stickers: res.json()});
